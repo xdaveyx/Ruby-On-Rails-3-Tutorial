@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pp'
 
 describe User do
 
@@ -121,6 +122,10 @@ describe User do
 
       it "should return the user on email/password match" do
         matching_user = User.authenticate(@attr[:email], @attr[:password])
+        pp matching_user
+        pp @user
+        matching_user.should == @user
+        
       end
     end
   end
